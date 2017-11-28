@@ -2,6 +2,44 @@
 /* CSS Document */
 
 
+
+.menu-bok {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.menu-bok a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.menu-bok a:hover {
+    color: #f1f1f1;
+}
+
+.menu-bok .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+
+
 /* body */
 body {
 	background: #d2d9c5;
@@ -15,7 +53,25 @@ body {
 	margin-left: -1%;}
 	
 /* MENU */
-
+.navbar-default, .navbar-inverse {
+    background-color: transparent;
+    border-color: transparent;
+}
+#menu-row {
+    background: #e36b5f;
+}
+.navbar-nav>li {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+.navbar-nav>li a {
+color: #fff !important;
+}
+.navbar-nav {
+    float: right;
+    margin: 0;
+}
 #naw-gor {
 	position: fixed;
 	background: #bc433f;
@@ -50,12 +106,8 @@ body {
 	-moz-transition-duration: .50s;
     transform: translate(-50%, -50%);
  	-ms-transform: translate(-50%, -50%);}
-
 #menu-bok {
-	position: relative;
-	background: #e36b5f;
-	width: 300px;
-	height: 660px;}
+	background: #e36b5f;}
 	
 .menu-naz {
 	font-family: Allura;
@@ -99,9 +151,7 @@ body {
 
 #blog {
 	position: relative;
-	width: 700px;
-	margin-left: 400px;
-	margin-top: -660px}
+}
 	
 i {color: #bc433f;}
 	
