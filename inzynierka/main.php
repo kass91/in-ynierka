@@ -61,43 +61,6 @@ session_start();
         <a href="slownictwo.php" title="słownictwo">słownictwo</a>
     </div>
 </div>
-<!--<div id="header-gora">
-	<div class="container">
-		<div class="logo col-lg-2 col-md-2 col-sm-2 col-xs-12">
-			<img src="xxx" class="img-responsive">
-		</div>
-		<div class="menu col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                      <nav class="navbar navbar-default col-xs-12">
-                      <div class="container-fluid">
-                      <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                        </button>
-                      </div>
-                        <div id="navbar" class="navbar-collapse collapse">
-                          <ul class="nav navbar-nav">
-                            <li><a href="index.php" title="strona główna">Start</a></li>
-					        <li><a href="about.php" title="o nas">O nas</a></li>
-					        <li><a href="szkolenia.php" title="szkolenia">Szkolenia</a></li>
-                            <li><a href="kontakt.php" title="kontakt">Kontakt</a></li>
-					        <?php if (isset($_SESSION['admin']) && $_SESSION['admin']) { ?>
-					        <li><a href="log.php" title="panel">Panel administratora</a></li> 
-   					        <?php } else if (isset($_SESSION['admin']) && !$_SESSION['admin']) { ?>
-					        <li><a href="log.php" title="panel">Panel użytkownika</a></li>                            
-                            <?php } else { ?>
-					        <li><a href="log.php" title="zaloguj">Zaloguj się</a></li>
-                            <?php } ?>
-                          </ul>                    
-                        </div>
-
-                      </div>
-                    </nav>
-                 </div>
-	</div>
-</div>--->
-
 
 <!--koniec menu-->
 
