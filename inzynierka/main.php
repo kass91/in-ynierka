@@ -10,17 +10,69 @@ session_start();
 <script src='java-script.js'></script>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <link rel='stylesheet' href='css-style.css' />
 <style>
 	@import url('https://fonts.googleapis.com/css?family=Allura|Cookie|Great+Vibes|Kaushan+Script|Lobster+Two|Montez|Parisienne|Slabo+27px|Merriweather|Montserrat|Raleway|Roboto+Condensed');
 </style>
+<script>
+function openNav() {
+    document.getElementById("menu-bok").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("menu-bok").style.width = "0";
+}
+</script>
 </head>
 
 <body>
 
 <!--poczatek menu-->
-<div id="naw-gor" class="navbar navbar-default navbar-fixed-top">
+<div id="menu-row" class="menu-row col-xs-12" style="top: 0px;">
+            <div class="container">
+                <div class="menu navbar navbar-default row">
+
+                    <nav class="navbar navbar-inverse">
+                      <div class="container-fluid">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span> 
+                          </button>                         
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <span style="font-size:30px;cursor:pointer; color:#fff;" onclick="openNav()">&#9776;</span>
+                          <ul class="nav navbar-nav">                           
+                           <li id="menu-item-2" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-22">
+                                   <a href="main.php" title="główna">Główna</a>
+                                </li>
+                                <li id="menu-item-3" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47">
+                                    <a href="about.php" title="o nas">O nas</a>
+                                </li>
+                                <li id="menu-item-4" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48">
+                                    <a href="kontakt.php" title="kontakt">Kontakt</a>
+                                </li>
+                                <li id="menu-item-5" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49">
+                                    <?php if (isset($_SESSION['admin']) && $_SESSION['admin']) { ?>
+                                    <a href="log.php" title="panel">Panel administratora</a>
+                                    <?php } else if (isset($_SESSION['admin']) && !$_SESSION['admin']) { ?>
+                                    <a href="log.php" title="panel">Panel użytkownika</a>                           
+                                    <?php } else { ?>
+                                    <a href="log.php" title="zaloguj">Zaloguj się</a>
+                                    <?php } ?>
+                                </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>  
+                </div>
+            </div>
+        </div>
+<!--<div id="naw-gor" class="navbar navbar-default navbar-fixed-top">
 	<div class="naw-li collapse navbar-collapse">
     <div class="naw-link">
     	<a href="main.php" title="główna">Główna</a>
@@ -35,10 +87,11 @@ session_start();
         <?php } ?>
     </div>
     </div>
-</div>
+</div> -->
 
 <!--- Menu boczne ---->
-<div id="menu-bok">
+<div id="menu-bok" class="menu-bok">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	<div class="menu-naz">Gramatyka</div>
     <div class="menu-link">
     	<a href="czasy.php" title="czasy">Czasy</a>
@@ -64,8 +117,8 @@ session_start();
 
 <!--koniec menu-->
 
-<!----blog----->
-	<div id='blog'>
+<div class="container">
+	<div id="blog" class="col-lg-10 pull-right">
         <div class="post">
             <div class="post-image"><img src='img/main.png' /></div>
             <div class="post-tit">Zacznij naukę języka angielskiego z nami</div>
@@ -76,5 +129,6 @@ session_start();
             <div class="post-podpis"><b>Dołącz do nas już dziś</b></div>  
         </div>
     </div>
+</div>
 </body>
 </html>
